@@ -6,24 +6,23 @@ programa: Gestion de hamburgueseria
 
 import utils.screenController as screenC
 import controllers.menus as menus
-import tabulate as tabulate
+from tabulate import tabulate
 
 def menu():
     while  True:
         screenC.limpiar_pantalla()
-        menu = [
+        menu_opciones = [
             [1, "Añadir un Nuevo Elemento"],
-            [2, "Buscar un Elemento"],
-            [3, "Editar un Elemento"],
-            [4, "Eliminar un Elemento"],
-            [5, "listar Elementos"],
-            [6, "Salir"]
+            [2, "Editar un Elemento"],
+            [3, "Eliminar un Elemento"],
+            [4, "listar Elementos"],
+            [5, "Salir del programa"]
         ]
 
         print("\n" + "="*43)
-        print("   Administrador de Colección de media")
+        print("   Administrador de Hamburgueseria")
         print("="*43)
-        print(tabulate(menu, tablefmt="plain"))
+        print(tabulate(menu_opciones, tablefmt="plain"))
         print("="*43)
 
         try:
@@ -36,14 +35,12 @@ def menu():
             case 1:
                 menus.opcion_1()
             case 2:
-                pass
+                menus.opcion_2()
             case 3:
-                pass
+                menus.opcion_3()
             case 4:
-                pass
+                menus.opcion_4()
             case 5:
-                pass
-            case 6:
                 print("Saliendo del programa...")
                 screenC.limpiar_pantalla()
                 break
@@ -51,5 +48,6 @@ def menu():
                 print("Opción no válida. Intenta de nuevo.")
                 screenC.pausar_pantalla()  
 
-        if __name__ == "__main__":
-            menu()
+
+if __name__ == "__main__":
+    menu()  

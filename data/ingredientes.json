@@ -16,5 +16,17 @@
         "descripcion": "Queso cheddar derretido",
         "precio": 1.5,
         "stock": 200
+    },
+    {
+        "nombre": "lechuga",
+        "descripcion": "hoja de lechuga",
+        "precio": 1.5,
+        "stock": 300
+    },
+    {
+        "nombre": "tomate",
+        "descripcion": "rodajas de tomate",
+        "precio": 0.5,
+        "stock": 100
     }
 ]
