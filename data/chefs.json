@@ -10,5 +10,9 @@
     {
         "nombre": "ChefC",
         "especialidad": "Gourmet"
+    },
+    {
+        "nombre": "ChefD",
+        "especialidad": "Gourmet"
     }
 ]

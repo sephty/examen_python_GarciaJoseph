@@ -3,6 +3,8 @@ import app as menu
 import controllers.añadir as add
 from tabulate import tabulate
 import controllers.listar as lista
+import controllers.editar as edit
+import controllers.eliminar as unadd
 
 def opcion_1():
     limpiar_pantalla()
@@ -14,6 +16,7 @@ def opcion_1():
         [1, "hamburguesas"],
         [2, "chefs"],
         [3, "ingredientes"],
+        [4, "categorias"],
         [4, "Regresar al Menú Principal"]
     ]
     print(tabulate(opciones, tablefmt="plain"))
@@ -34,7 +37,9 @@ def opcion_1():
         case 3:
             add.add_ingrediente()
         case 4:
-            return menu.menu()
+            add.add_categoria()
+        case 5:
+            menu.menu()
         case _:
             print("Opción no válida. Intenta de nuevo.")
             pausar_pantalla()
@@ -51,6 +56,7 @@ def opcion_2():
         [1, "hamburguesas"],
         [2, "chefs"],
         [3, "ingredientes"],
+        [4, "categorias"],
         [4, "Regresar al Menú Principal"]
     ]
     print(tabulate(opciones, tablefmt="plain"))
@@ -88,6 +94,7 @@ def opcion_3():
         [1, "hamburguesas"],
         [2, "chefs"],
         [3, "ingredientes"],
+        [4, "categorias"],
         [4, "Regresar al Menú Principal"]
     ]
     print(tabulate(opciones, tablefmt="plain"))
@@ -102,13 +109,13 @@ def opcion_3():
 
     match opcion:
         case 1:
-            pass
+            unadd.eliminar_hamburguesa()
         case 2:
-            pass
+            unadd.eliminar_chef()
         case 3:
-            pass
+            unadd.eliminar_ingrediente()
         case 4:
-            return menu.menu()
+            unadd.eliminar_categoria()
         case _:
             print("Opción no válida. Intenta de nuevo.")
             pausar_pantalla()
@@ -125,6 +132,7 @@ def opcion_4():
         [1, "hamburguesas"],
         [2, "chefs"],
         [3, "ingredientes"],
+        [4, "categorias"],
         [4, "Regresar al Menú Principal"]
     ]
     print(tabulate(opciones, tablefmt="plain"))

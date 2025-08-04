@@ -15,6 +15,7 @@ def validate_ingrediente(ingredient: dict) -> bool:
     if not isinstance(ingredient["precio"], int) or not (ingredient["precio"] <= 0):
         print("Error: El precio no puede ser 0 o negativo.")
         return False
+    
 
 
     return True
@@ -36,6 +37,10 @@ def validate_categoria(category: dict) -> bool:
         if field not in category or not category[field]:
             print (f"Error: el campo '{field}' es obligatorio en categoria")
             return False
+        if not isinstance(category["descripcion"], str):
+            print("Error: La descripción debe ser una cadena de caracteres.")
+            return False
+        
 
     return True
 
