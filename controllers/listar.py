@@ -5,8 +5,7 @@ import utils.screenController as screenC
 from tabulate import tabulate
 
 def listar_ingredientes():
-    data = core.read_json(dataHandler.ingredientes_path)
-    ingredientes = data.get("ingredientes", [])
+    ingredientes = core.read_json(dataHandler.ingredientes_path)
 
     if not ingredientes:
         print("No hay ingredientes registrados.")
@@ -17,42 +16,38 @@ def listar_ingredientes():
     print("=" * 43)
 
     headers = ["nombre", "descripcion", "precio", "stock"]
-    table = [[i.get("nombre"), i.get("descripcion"), i.get("precio"), i.get("stock")] for i in ingredientes]
+    table = [[i.get("nombre", "N/A"), i.get("descripcion", "N/A"), i.get("precio", "N/A"), i.get("stock", "N/A")] for i in ingredientes]
     print(tabulate(table, headers=["Nombre", "Descripción", "Precio", "Stock"], tablefmt="pretty"))
 
 def listar_hamburguesas():
-    data = core.read_json(dataHandler.hamburguesas_path)
-    hamburguesas = data.get("hamburguesas", [])
+    hamburguesas = core.read_json(dataHandler.hamburguesas_path)
 
     if not hamburguesas:
         print("No hay hamburguesas registradas.")
         return
-    
-    headers = ["nombre", "descripcion", "precio", "stock", "categoria", "chef"]
-    table = [[i.get("nombre"), i.get("descripcion"), i.get("precio"), i.get("stock"), i.get("categoria"), i.get("chef")] for i in hamburguesas]
-    print(tabulate(table, headers=["Nombre", "Descripción", "Precio", "Stock", "Categoria", "Chef"], tablefmt="pretty"))
+
+    headers = ["nombre", "descripcion", "precio", "categoria", "chef"]
+    table = [[i.get("nombre", "N/A"), i.get("descripcion", "N/A"), i.get("precio", "N/A"), i.get("categoria", "N/A"), i.get("chef", "N/A")] for i in hamburguesas]
+    print(tabulate(table, headers=["Nombre", "Descripción", "Precio", "Categoria", "Chef"], tablefmt="pretty"))
 
 def listar_categorias():
-    data = core.read_json(dataHandler.categorias_path)
-    categorias = data.get("categorias", [])
+    categorias = core.read_json(dataHandler.categorias_path)
 
     if not categorias:
-        print("No hay categorias registradas.")
+        print("No hay categorías registradas.")
         return
-    
+
     headers = ["nombre", "descripcion"]
-    table = [[i.get("nombre"), i.get("descripcion")] for i in categorias]
+    table = [[i.get("nombre", "N/A"), i.get("descripcion", "N/A")] for i in categorias]
     print(tabulate(table, headers=["Nombre", "Descripción"], tablefmt="pretty"))
 
 def listar_chefs():
-    data = core.read_json(dataHandler.chefs_path)
-    chefs = data.get("chefs", [])
+    chefs = core.read_json(dataHandler.chefs_path)
 
     if not chefs:
         print("No hay chefs registrados.")
         return
-    
+
     headers = ["nombre", "descripcion"]
-    table = [[i.get("nombre"), i.get("descripcion")] for i in chefs]
-    print(tabulate(table, headers=["Nombre", "Descripción"], tablefmt="pretty"))    
-    
+    table = [[i.get("nombre", "N/A"), i.get("descripcion", "N/A")] for i in chefs]
+    print(tabulate(table, headers=["Nombre", "Descripción"], tablefmt="pretty"))

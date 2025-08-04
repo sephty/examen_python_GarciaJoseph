@@ -147,12 +147,14 @@ def opcion_4():
 
     match opcion:
         case 1:
-            lista.listar_ingredientes()
+            lista.listar_chefs()
         case 2:
-            pass
+            lista.listar_ingredientes()
         case 3:
-            pass
+            lista.listar_hamburguesas()
         case 4:
+            lista.listar_categorias()
+        case 5:
             return menu.menu()
         case _:
             print("Opción no válida. Intenta de nuevo.")
